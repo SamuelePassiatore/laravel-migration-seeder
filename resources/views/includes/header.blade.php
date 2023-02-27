@@ -9,6 +9,11 @@
                             href="{{ url('/') }}">Home
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link @if (request()->routeIs('images')) active @endif"
+                            href="{{ route('images') }}">Images
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

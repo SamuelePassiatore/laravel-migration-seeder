@@ -12,4 +12,9 @@ class HomeController extends Controller
         $trains = Train::all();
         return view('home', compact('trains'));
     }
+
+    public function images()
+    {
+        return view('images');
+    }
 }
