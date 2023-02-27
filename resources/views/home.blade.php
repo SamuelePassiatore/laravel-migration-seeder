@@ -3,23 +3,39 @@
 @section('title', 'Home')
 
 @section('content')
-    Tabella treni
-    <ol>
-        @foreach ($trains as $train)
-            <li>
-                <ul class="mb-3">
-                    <li><strong>Date: </strong>{{ $train->date }}</li>
-                    <li><strong>Company: </strong>{{ $train->company }}</li>
-                    <li><strong>Departure Station: </strong>{{ $train->departure_station }}</li>
-                    <li><strong>Arrival Station: </strong>{{ $train->arrival_station }}</li>
-                    <li><strong>Departure Time: </strong>{{ $train->departure_time }}</li>
-                    <li><strong>Arrival Time: </strong>{{ $train->arrival_time }}</li>
-                    <li><strong>Train Code: </strong>{{ $train->train_code }}</li>
-                    <li><strong>Carriages Number: </strong>{{ $train->carriages_number }}</li>
-                    <li><strong>On time / Late: </strong>{{ $train->on_time ? 'ON TIME' : 'LATE' }}</li>
-                    <li><strong>Deleted / Confirmed: </strong>{{ $train->deleted ? 'DELETED' : 'CONFIRMED' }}</li>
-                </ul>
-            </li>
-        @endforeach
-    </ol>
+    <section class="section-home container-fluid text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Departure Station</th>
+                    <th scope="col">Arrival Station</th>
+                    <th scope="col">Departure Time</th>
+                    <th scope="col">Arrival Time</th>
+                    <th scope="col">Train Code</th>
+                    <th scope="col">Carriages Number</th>
+                    <th scope="col">On Time / Late</th>
+                    <th scope="col">Deleted / Confirmed</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($trains as $train)
+                    <tr>
+                        <td>{{ $train->date }}</td>
+                        <td>{{ $train->company }}</td>
+                        <td>{{ $train->departure_station }}</td>
+                        <td>{{ $train->arrival_station }}</td>
+                        <td>{{ $train->departure_time }}</td>
+                        <td>{{ $train->arrival_time }}</td>
+                        <td>{{ $train->train_code }}</td>
+                        <td>{{ $train->carriages_number }}</td>
+                        <td>{{ $train->on_time ? 'ON TIME' : 'LATE' }}</td>
+                        <td>{{ $train->deleted ? 'DELETED' : 'CONFIRMED' }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </section>
+
 @endsection
