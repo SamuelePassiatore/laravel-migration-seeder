@@ -1,3 +1,7 @@
+<?php
+use Carbon\Carbon;
+?>
+
 @extends('layouts.main')
 
 @section('title', 'Home')
@@ -22,7 +26,7 @@
             <tbody>
                 @foreach ($trains as $train)
                     <tr>
-                        <td>{{ $train->date }}</td>
+                        <td>{{ Carbon::parse($train->date)->format('d/m/Y') }}</td>
                         <td>{{ $train->company }}</td>
                         <td>{{ $train->departure_station }}</td>
                         <td>{{ $train->arrival_station }}</td>

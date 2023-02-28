@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fs-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fs-4 px-3">
         <div class="container-fluid">
             <div class="navbar-brand">Trains</div>
             <div class="collapse navbar-collapse">
